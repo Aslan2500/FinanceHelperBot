@@ -1,1 +1,4 @@
-FinanceHelperBotApplication.class
+finance/bot/config/BotConfig.class
+finance/bot/FinanceHelperBotApplication.class
+finance/bot/config/BotInitializer.class
+finance/bot/service/TelegramBot.class
