@@ -5,7 +5,9 @@
       <configuration>
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="Hibernate" />
-        <datasource-mapping />
+        <datasource-mapping>
+          <factory-entry name="entityManagerFactory" />
+        </datasource-mapping>
         <naming-strategy-map />
       </configuration>
     </facet>
@@ -83,7 +85,6 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-core:5.3.22" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-jcl:5.3.22" level="project" />
     <orderEntry type="library" name="Maven: org.yaml:snakeyaml:1.30" level="project" />
-    <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.18.24" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-data-jpa:2.7.1" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-aop:2.7.1" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-aop:5.3.21" level="project" />
@@ -113,5 +114,7 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-aspects:5.3.21" level="project" />
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:8.0.29" level="project" />
     <orderEntry type="library" name="Maven: com.google.protobuf:protobuf-java:3.19.4" level="project" />
+    <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.18.24" level="project" />
+    <orderEntry type="library" name="Maven: com.vdurmont:emoji-java:5.1.1" level="project" />
   </component>
 </module>

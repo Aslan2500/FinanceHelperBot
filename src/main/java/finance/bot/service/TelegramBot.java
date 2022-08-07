@@ -1,5 +1,6 @@
 package finance.bot.service;
 
+import com.vdurmont.emoji.EmojiParser;
 import finance.bot.config.BotConfig;
 import finance.bot.entity.User;
 import finance.bot.entity.UserRepository;
@@ -82,7 +83,7 @@ public class TelegramBot extends TelegramLongPollingBot {
     }
 
     private void startCommandReceived(long chatId, String firstName) {
-        String answer = "Hi, " + firstName + ", nice to meet you!";
+        String answer = EmojiParser.parseToUnicode("Hi, " + firstName + ", nice to meet you! :blush:");
         sendMessage(chatId, answer);
     }
 
