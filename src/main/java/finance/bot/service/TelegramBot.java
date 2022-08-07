@@ -1,21 +1,28 @@
 package finance.bot.service;
 
 import finance.bot.config.BotConfig;
+import finance.bot.entity.User;
+import finance.bot.entity.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.commands.SetMyCommands;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
+import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.commands.BotCommand;
 import org.telegram.telegrambots.meta.api.objects.commands.scope.BotCommandScopeDefault;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class TelegramBot extends TelegramLongPollingBot {
 
+    @Autowired
+    private UserRepository userRepository;
     final BotConfig config;
     private static final String HELP_TEXT = "Bot for financial purposes. \n\nIt is still in progress.";
 
@@ -50,10 +57,27 @@ public class TelegramBot extends TelegramLongPollingBot {
             String messageText = update.getMessage().getText();
             long chatId = update.getMessage().getChatId();
             switch (messageText) {
-                case "/start" -> startCommandReceived(chatId, update.getMessage().getChat().getFirstName());
+                case "/start" -> {
+                    registerUser(update.getMessage());
+                    startCommandReceived(chatId, update.getMessage().getChat().getFirstName());
+                }
                 case "/help" -> sendMessage(chatId, HELP_TEXT);
                 default -> sendMessage(chatId, "Sorry, command was not recognized");
             }
+        }
+    }
+
+    private void registerUser(Message message) {
+        if (userRepository.findById(message.getChatId()).isEmpty()) {
+            var chatId = message.getChatId();
+            var chat = message.getChat();
+            User user = new User();
+            user.setId(chatId);
+            user.setFirstName(chat.getFirstName());
+            user.setLastName(chat.getLastName());
+            user.setUserName(chat.getUserName());
+            user.setRegisteredAt(new Timestamp(System.currentTimeMillis()));
+            userRepository.save(user);
         }
     }
 
