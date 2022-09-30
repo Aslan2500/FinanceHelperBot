@@ -11,7 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="FinanceHelperBot" target="17" />
+      <module name="FinanceHelperBot" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
