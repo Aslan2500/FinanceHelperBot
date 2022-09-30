@@ -1,4 +1,7 @@
+finance/bot/entity/texts/CommandTexts.class
 finance/bot/service/TelegramBot.class
 finance/bot/config/BotConfig.class
 finance/bot/FinanceHelperBotApplication.class
+finance/bot/repository/UserRepository.class
 finance/bot/config/BotInitializer.class
+finance/bot/entity/User.class
