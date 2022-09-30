@@ -1,4 +1,7 @@
+/Users/aslanmagamaev/IdeaProjects/FinanceHelperBot/src/main/java/finance/bot/entity/User.java
 /Users/aslanmagamaev/IdeaProjects/FinanceHelperBot/src/main/java/finance/bot/config/BotInitializer.java
+/Users/aslanmagamaev/IdeaProjects/FinanceHelperBot/src/main/java/finance/bot/repository/UserRepository.java
 /Users/aslanmagamaev/IdeaProjects/FinanceHelperBot/src/main/java/finance/bot/FinanceHelperBotApplication.java
 /Users/aslanmagamaev/IdeaProjects/FinanceHelperBot/src/main/java/finance/bot/config/BotConfig.java
+/Users/aslanmagamaev/IdeaProjects/FinanceHelperBot/src/main/java/finance/bot/entity/texts/CommandTexts.java
 /Users/aslanmagamaev/IdeaProjects/FinanceHelperBot/src/main/java/finance/bot/service/TelegramBot.java
